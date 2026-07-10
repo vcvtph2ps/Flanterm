@@ -70,6 +70,8 @@ struct flanterm_context *flanterm_fb_init(
     int rotation
 );
 
+void flanterm_fb_update_framebuffer(struct flanterm_context *ctx, uint32_t *framebuffer);
+
 void flanterm_fb_set_flush_callback(struct flanterm_context *ctx, void (*flush_callback)(volatile void *address, size_t length));
 
 #ifdef __cplusplus

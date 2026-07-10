@@ -1201,6 +1201,11 @@ static void flanterm_fb_deinit(struct flanterm_context *_ctx, void (*_free)(void
     _free(ctx, sizeof(struct flanterm_fb_context));
 }
 
+void flanterm_fb_update_framebuffer(struct flanterm_context *ctx_, uint32_t *framebuffer) {
+    struct flanterm_fb_context *ctx = (struct flanterm_fb_context*)ctx_;
+    ctx->framebuffer = framebuffer;
+}
+
 struct flanterm_context *flanterm_fb_init(
     void *(*_malloc)(size_t),
     void (*_free)(void *, size_t),
